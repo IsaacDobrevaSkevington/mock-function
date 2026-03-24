@@ -1,0 +1,4 @@
+site_name: Mock Function
+site_url: https://isaacdobrevaskevington.github.io/mock-function/
+theme:
+  name: material
