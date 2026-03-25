@@ -5,7 +5,6 @@ import java.net.URI
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
     id("maven-publish")
     alias(libs.plugins.vanniktech.maven.publish)
     alias(libs.plugins.dokka)
@@ -14,11 +13,6 @@ plugins {
 
 kotlin {
     withSourcesJar(publish = true)
-    androidTarget {
-        compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
-        }
-    }
 
     listOf(
         iosArm64(),
@@ -26,11 +20,6 @@ kotlin {
     )
 
     jvm()
-
-    js {
-        browser()
-        binaries.executable()
-    }
 
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
