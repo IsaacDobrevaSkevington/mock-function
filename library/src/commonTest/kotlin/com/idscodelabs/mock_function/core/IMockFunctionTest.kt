@@ -38,7 +38,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is invoked arg1 times WHEN verify wasCalledExactly(arg2 eq arg1) is called THEN no error is thrown`()= parametrisedTest<Pair<Int, Int>>(
+    fun `GIVEN MockFunction is invoked arg1 times WHEN verify wasCalledExactly arg2 eq arg1 is called THEN no error is thrown`()= parametrisedTest<Pair<Int, Int>>(
         100,
         { it to it }
     ){(calls, assertCalls) ->
@@ -53,7 +53,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is invoked arg1 times WHEN verify wasCalledAtLeast(arg2 lte arg1) is called THEN no error is thrown`() = parametrisedTest<Pair<Int, Int>>(
+    fun `GIVEN MockFunction is invoked arg1 times WHEN verify wasCalledAtLeast arg2 lte arg1 is called THEN no error is thrown`() = parametrisedTest<Pair<Int, Int>>(
         0 to 0,
         1 to 0,
         2 to 0,
@@ -73,7 +73,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is invoked three times WHEN verify wasCalledAtMost(4) is called THEN no error is thrown`(){
+    fun `GIVEN MockFunction is invoked three times WHEN verify wasCalledAtMost 4 is called THEN no error is thrown`(){
         val mockFunction = getMockFunction(defaultResult)
         invokeFunction(mockFunction)
         invokeFunction(mockFunction)
@@ -84,7 +84,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is not invoked WHEN verify wasNotCalled() is called THEN no error is thrown`(){
+    fun `GIVEN MockFunction is not invoked WHEN verify wasNotCalled is called THEN no error is thrown`(){
         val mockFunction = getMockFunction(defaultResult)
 
         mockFunction.verify {
@@ -105,7 +105,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is invoked once WHEN verify wasCalledExactly(2) is called THEN error is thrown`(){
+    fun `GIVEN MockFunction is invoked once WHEN verify wasCalledExactly 2 is called THEN error is thrown`(){
         val mockFunction = getMockFunction(defaultResult)
         invokeFunction(mockFunction)
 
@@ -117,7 +117,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is invoked one time WHEN verify wasCalledAtLeast(2) is called THEN error is thrown`(){
+    fun `GIVEN MockFunction is invoked one time WHEN verify wasCalledAtLeast 2 is called THEN error is thrown`(){
         val mockFunction = getMockFunction(defaultResult)
         invokeFunction(mockFunction)
 
@@ -129,7 +129,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is invoked five times WHEN verify wasCalledAtMost(4) is called THEN error is thrown`(){
+    fun `GIVEN MockFunction is invoked five times WHEN verify wasCalledAtMost 4 is called THEN error is thrown`(){
         val mockFunction = getMockFunction(defaultResult)
         invokeFunction(mockFunction)
         invokeFunction(mockFunction)
@@ -145,7 +145,7 @@ class IMockFunctionTest {
     }
 
     @Test
-    fun `GIVEN MockFunction is invoked WHEN verify wasNotCalled() is called THEN error is thrown`(){
+    fun `GIVEN MockFunction is invoked WHEN verify wasNotCalled is called THEN error is thrown`(){
         val mockFunction = getMockFunction(defaultResult)
 
         invokeFunction(mockFunction)
